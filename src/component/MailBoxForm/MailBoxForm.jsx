@@ -1,9 +1,17 @@
 import { Field, Form, Formik } from "formik";
+import * as Yup from 'yup';
 
  const FORM_INITIAL_VALUES = {
     userEmail:'',
-     userName:''
+    userName:''
 }
+
+const mailBosSchema = Yup.object({
+    userEmail: Yup.string().required('Email adress is reguired')
+    .email('You must enter valid email adress!'),
+    userName: Yup.string().required('User name is reguired')
+ 
+});
 
 const MailBoxForm = ({ onAddUsers }) => {
   const handleSubmit = (values, actions) => {
@@ -12,7 +20,7 @@ const MailBoxForm = ({ onAddUsers }) => {
   };
 
   return (
-    <Formik initialValues={FORM_INITIAL_VALUES} onSubmit={handleSubmit}>
+    <Formik initialValues={FORM_INITIAL_VALUES} onSubmit={handleSubmit} >
       <Form>
         <h2>Add new users</h2>
         <label>
