@@ -34,8 +34,7 @@ const MailBoxForm = ({ onAddUsers }) => {
     <Formik
       initialValues={FORM_INITIAL_VALUES}
       onSubmit={handleSubmit}
-      validationSchema={mailBosSchema}
-    >
+      validationSchema={mailBosSchema} >
       <Form>
         <h2>Add new users</h2>
         <label>
