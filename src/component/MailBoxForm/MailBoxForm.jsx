@@ -21,7 +21,7 @@ const mailBosSchema = Yup.object({
     ),
   favColor: Yup.string()
     .required("favourite color is reguired")
-    .oneOf(["Red", "Green", "Blui"], "favourite color must be one "),
+    .oneOf(["red", "green", "blue"], "favourite color must be one "),
 });
 
 const MailBoxForm = ({ onAddUsers }) => {
@@ -64,6 +64,7 @@ const MailBoxForm = ({ onAddUsers }) => {
           <label>
             <Field type="radio" name="favColor" value="blue" />
             <span>Blue:</span>
+            <ErrorMessage component="p" name="favColor" />
           </label>
         <br />
         <button type="submit"> ▶ Create new users</button>
