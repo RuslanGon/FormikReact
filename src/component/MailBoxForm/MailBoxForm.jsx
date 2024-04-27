@@ -1,4 +1,4 @@
-import { Form, Formik } from "formik";
+import { Field, Form, Formik } from "formik";
 
 const MailBoxForm = ({ onAddUsers }) => {
   const handleSubmit = () => {
@@ -9,20 +9,19 @@ const MailBoxForm = ({ onAddUsers }) => {
   };
 
   return (
-    <Formik initialValues={{}} onSubmit={() => {}}>
+    <Formik initialValues={{}} onSubmit={handleSubmit}>
       <Form>
         <h2>Add new users</h2>
         <label>
           <span>User email</span>
           <br />
-          <input type="email" name="userEmail" placeholder="@email" required />
+          <Field type="email" name="userEmail" placeholder="@email" />
         </label>
-
         <br />
         <label>
           <span>User name</span>
           <br />
-          <input type="text" name="userName" placeholder="name" required />
+          <Field type="text" name="userName" placeholder="name" required />
         </label>
         <br />
         <br />
