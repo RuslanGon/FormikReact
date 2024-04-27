@@ -9,7 +9,8 @@ import { MAX_CHAR_NAME_VALIDATION } from "../../utils/constans";
 
 const mailBosSchema = Yup.object({
     userEmail: Yup.string().required('Email adress is reguired')
-    .email('You must enter valid email adress!'),
+    .email('You must enter valid email adress!')
+    .matches(/[^\s]+/, 'not trim'),
     userName: Yup.string().required('User name is reguired')
     .max(MAX_CHAR_NAME_VALIDATION, `Your user name must be less than ${MAX_CHAR_NAME_VALIDATION} sumbal`)
 });
