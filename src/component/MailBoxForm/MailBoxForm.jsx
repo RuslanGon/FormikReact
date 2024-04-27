@@ -17,7 +17,8 @@ const mailBosSchema = Yup.object({
     required('User name is reguired')
     .max(MAX_CHAR_NAME_VALIDATION, `Your user name must be less than ${MAX_CHAR_NAME_VALIDATION} sumbal`),
     favColor:Yup.string().
-    required('favorit color is reguired')
+    required('favourite color is reguired')
+    .oneOf(['Red', 'Green', 'Blui'], "favourite color must be one ")
 });
 
 const MailBoxForm = ({ onAddUsers }) => {
