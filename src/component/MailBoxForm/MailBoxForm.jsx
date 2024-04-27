@@ -1,15 +1,15 @@
 import { Field, Form, Formik } from "formik";
 
+import FORM_INITIAL_VALUES from "../../utils/constans";
+
 const MailBoxForm = ({ onAddUsers }) => {
-  const handleSubmit = () => {
-   
-    
-    // onAddUsers(formData);
-    // event.currentTarget.reset();
+  const handleSubmit = (values, actions) => {
+    onAddUsers(values);
+    actions.reset();
   };
 
   return (
-    <Formik initialValues={{}} onSubmit={handleSubmit}>
+    <Formik initialValues={FORM_INITIAL_VALUES} onSubmit={handleSubmit}>
       <Form>
         <h2>Add new users</h2>
         <label>
