@@ -4,15 +4,20 @@ import { MAX_CHAR_NAME_VALIDATION } from "../../utils/constans";
 
  const FORM_INITIAL_VALUES = {
     userEmail:'',
-    userName:''
+    userName:'',
+    favColor: ''
 }
 
 const mailBosSchema = Yup.object({
-    userEmail: Yup.string().required('Email adress is reguired')
+    userEmail: Yup.string()
+    .required('Email adress is reguired')
     .email('You must enter valid email adress!')
     .matches(/[^\s]+/, 'not trim'),
-    userName: Yup.string().required('User name is reguired')
-    .max(MAX_CHAR_NAME_VALIDATION, `Your user name must be less than ${MAX_CHAR_NAME_VALIDATION} sumbal`)
+    userName: Yup.string().
+    required('User name is reguired')
+    .max(MAX_CHAR_NAME_VALIDATION, `Your user name must be less than ${MAX_CHAR_NAME_VALIDATION} sumbal`),
+    favColor:Yup.string().
+    required('favorit color is reguired')
 });
 
 const MailBoxForm = ({ onAddUsers }) => {
