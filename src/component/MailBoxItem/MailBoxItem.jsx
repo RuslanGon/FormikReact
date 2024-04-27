@@ -1,4 +1,4 @@
-import css from './mailBoxItem.module.css'
+import css from './MailBoxItem.module.css'
 
 const MailBoxItem = ({user, onDeleteUsers}) => {
     return (
