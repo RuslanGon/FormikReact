@@ -5,7 +5,7 @@ const MailBoxItem = ({user, onDeleteUsers}) => {
       
       <li>
         <p>Email: {user.userEmail}</p>
-        <p className={css.name}>Name: <div className={css.color} /> {user.userName}</p>
+        <p className={css.name}>Name: <div style={{backgroundColor: user.favColor}} className={css.color} /> {user.userName}</p>
         <button type="button" onClick={() => onDeleteUsers(user.id)}>❌ Delete user</button>
       </li>
       
