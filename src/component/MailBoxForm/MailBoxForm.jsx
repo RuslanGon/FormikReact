@@ -1,6 +1,9 @@
 import { Field, Form, Formik } from "formik";
 
-import FORM_INITIAL_VALUES from "../../utils/constans";
+ const FORM_INITIAL_VALUES = {
+    userEmail:'',
+     userName:''
+}
 
 const MailBoxForm = ({ onAddUsers }) => {
   const handleSubmit = (values, actions) => {
