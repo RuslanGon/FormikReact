@@ -5,7 +5,7 @@ import FORM_INITIAL_VALUES from "../../utils/constans";
 const MailBoxForm = ({ onAddUsers }) => {
   const handleSubmit = (values, actions) => {
     onAddUsers(values);
-    actions.reset();
+    actions.resetForm();
   };
 
   return (
